@@ -37,7 +37,7 @@ class Handler {
     async send_article() {
         response = await this.httpsPost({
             hostname: 'localhost',
-            path: `/scenery-vision/api/v1.0/handle`,
+            path: `/scenery-vision/api/v1.0/handl`,
             body: JSON.stringify({
                 article: this.article
             })
