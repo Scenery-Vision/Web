@@ -1,0 +1,18 @@
+<nav class="drac-text-black" style="background: teal;">
+    <div class="nav-wrapper">
+        <img class="brand-logo drac-text-black" alt="Scenery Vision" src="/favicon.ico" style="height: 97%; object-fit: cover;">
+        <ul id="nav-mobile" class="right hide-on-med-and-down" class="drac-bg-purple">
+            {{#if isMain}}
+                <li class="active"><a href="/">Загрузить артикул</a></li>
+            {{else}}
+                <li><a href="/">Загрузить артикул</a></li>
+            {{/if}}
+
+            {{#if isAbout}}
+                <li class="active"><a href="/about">О нас</a></li>
+            {{else}}
+                <li><a href="/about">О нас</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
