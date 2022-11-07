@@ -64,7 +64,6 @@ module.exports = {
         } else {
             return options.inverse(this);
         }
-
     },
     getFromArr: function (array, index) {
         return array[index]
