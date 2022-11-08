@@ -1,8 +1,8 @@
 const https = require('https');
 
 class Handler {
-    constructor(article) {
-        this.article = article;
+    constructor(code) {
+        this.code = code;
     }
 
     async httpsPost({
@@ -34,12 +34,12 @@ class Handler {
         })
     }
 
-    async send_article() {
+    async send_code() {
         response = await this.httpsPost({
             hostname: 'localhost',
             path: `/scenery-vision/api/v1.0/handle`,
             body: JSON.stringify({
-                article: this.article
+                code: this.code
             })
         })
 

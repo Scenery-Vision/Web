@@ -1,7 +1,7 @@
 const {
     Router
 } = require('express')
-const ArticleHandler = require('../models/content');
+const CodeHandler = require('../models/content');
 const router = Router()
 
 router.get('', async (_req, res, _next) => {
@@ -17,8 +17,8 @@ router.get('/:code', async (req, res, _next) => {
     res.render('index', {
         title: "Scenery Vision",
         isMain: true,
-        has_article: true,
-        article: req.params.code,
+        has_code: true,
+        code: req.params.code,
         // info: info
     })
 })
@@ -26,16 +26,16 @@ router.get('/:code', async (req, res, _next) => {
 router.post("/handle", async (req, res, _next) => {
     /*
     TODO:
-    content -> model -> uid (or use article here) -> DB (local) -> load -> card (+ thumbnail if doesn't exist)
+    content -> model -> uid (or use code here) -> DB (local) -> load -> card (+ thumbnail if doesn't exist)
     TODO: check if exists, if doesnt -> generate -> redir, else -> redir
     */
 
-    const article = req.body.article
-    handler = new ArticleHandler(article)
-    // server_response = await handler.send_article()
+    const code = req.body.code
+    handler = new CodeHandler(code)
+    // server_response = await handler.send_code()
 
     res.status(200);
-    res.redirect(`/${article}`);
+    res.redirect(`/${code}`);
 })
 
 module.exports = router
