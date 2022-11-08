@@ -3196,7 +3196,11 @@ input[type=range]+.thumb {
 }
 
 .no-padding {
-    padding: 0 !important
+    padding: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
 }
 
 span.badge {

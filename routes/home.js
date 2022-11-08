@@ -12,11 +12,14 @@ router.get('', async (_req, res, _next) => {
     })
 })
 
-router.get('/:code', async (_req, res, _next) => {
+router.get('/:code', async (req, res, _next) => {
     res.status(200)
     res.render('index', {
         title: "Scenery Vision",
-        isMain: true
+        isMain: true,
+        has_article: true,
+        article: req.params.code,
+        // info: info
     })
 })
 
@@ -24,6 +27,7 @@ router.post("/handle", async (req, res, _next) => {
     /*
     TODO:
     content -> model -> uid (or use article here) -> DB (local) -> load -> card (+ thumbnail if doesn't exist)
+    TODO: check if exists, if doesnt -> generate -> redir, else -> redir
     */
 
     const article = req.body.article
