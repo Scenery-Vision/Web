@@ -14,6 +14,12 @@ module.exports = {
         }
         return options.inverse(this);
     },
+    ifnoterror: function (a, full, options) {
+        if ((a !== "Not found" || !a) && full) {
+            return options.fn(this);
+        }
+        return options.inverse(this);
+    },
     compare: function (lvalue, rvalue, options) {
         if (lvalue >= 10) {
             lvalue = lvalue % 10;

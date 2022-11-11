@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const exphbs = require('express-handlebars');
+const session = require('express-session');
 const homeRoutes = require('./routes/home');
 const aboutRoutes = require('./routes/about');
 const app = express();
@@ -25,6 +26,7 @@ app.use(express.urlencoded({
 }));
 
 app.use(express.static('public'));
+app.use(session({secret: 'so-secret', resave: false, saveUninitialized: false}));
 app.use(morgan('dev'))
 app.use('/', homeRoutes);
 app.use('/about', aboutRoutes);

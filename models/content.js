@@ -1,16 +1,16 @@
-const https = require('https');
+const http = require('http');
 
 class Handler {
     constructor(code) {
         this.code = code;
     }
 
-    async httpsPost({
+    async httpPost({
         body,
         ...options
     }) {
         return new Promise((resolve, reject) => {
-            const req = https.request({
+            const req = http.request({
                 method: 'POST',
                 ...options,
             }, res => {
@@ -35,12 +35,10 @@ class Handler {
     }
 
     async send_code() {
-        response = await this.httpsPost({
-            hostname: 'localhost',
-            path: `/scenery-vision/api/v1.0/handle`,
-            body: JSON.stringify({
-                code: this.code
-            })
+        let response = await this.httpPost({
+            hostname: '127.0.0.1',
+            port: '3350',
+            path: `/scenery-vision/api/v1.0/generation_of_code/?code=${this.code}`,
         })
 
         return response

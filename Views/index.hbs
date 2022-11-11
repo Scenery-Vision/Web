@@ -13,6 +13,7 @@
             type="text"
             class="code-input valign-wrapper"
             name="code"
+            value="{{code}}"
             placeholder="Введите артикул"
           />
           <button class="submit-button">
@@ -34,109 +35,61 @@
   </div>
 </form>
 {{#if has_code}}
-  <div class="devider"></div>
-  <div class="section">
-    <div class="row">
-      <div class="col s6">
-        <div class="card drac-bg-red-transparent">
-          <p class="drac-text-red center drac-heading-xl no-margin">
-            Кольцо из золота с бриллиантами
-          </p>
+  {{#ifnoterror info.error info}}
+    <div class="devider"></div>
+    <div class="section">
+      <div class="row">
+        <div class="col s6">
+          <div class="card drac-bg-red-transparent">
+            <p class="drac-text-red center drac-heading-xl no-margin">
+              {{info.name}}
+            </p>
+          </div>
+          <div class="card drac-bg-red-transparent">
+            <img src="{{info.img}}">
+          </div>
         </div>
-      </div>
-      <div class="col s6">
-        <div class="card drac-bg-red-transparent">
-          <div class="section no-padding">
-            <div class="char-heading row">
-              <p class="drac-text-red left drac-heading-xl no-margin">
-                Характеристики:
-              </p>
+        <div class="col s6">
+          <div class="card drac-bg-red-transparent">
+            <div class="section no-padding">
+              <div class="char-heading row">
+                <p class="drac-text-red left drac-heading-xl no-margin">
+                  Характеристики:
+                </p>
+              </div>
+              {{#each info.chars}}
+                <div class="char row">
+                  <p class="drac-text-red left drac-heading no-margin">
+                    {{this.key}}
+                    :
+                  </p>
+                  <p class="drac-text-red right drac-heading no-margin">
+                    {{this.val}}
+                  </p>
+                </div>
+              {{/each}}
             </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Бренд:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                Sokolov
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Тип металла:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                Красное золото
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Проба:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                585
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Тип металла:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                Красное золото
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Проба:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                585
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Тип металла:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                Красное золото
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Проба:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                585
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Тип металла:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                Красное золото
-              </p>
-            </div>
-            <div class="char row">
-              <p class="drac-text-red left drac-heading no-margin">
-                Проба:
-              </p>
-              <p class="drac-text-red right drac-heading no-margin">
-                585
-              </p>
+            <div class="section">
+              <div class="row right card-buttons">
+                <button>
+                  <
+                </button>
+                <button>
+                  >
+                </button>
+              </div>
             </div>
           </div>
-          <div class="section">
-            <div class="row right card-buttons">
-              <button>
-                <
-              </button>
-              <button>
-                >
-              </button>
-            </div>
+          <div class="card description-card drac-bg-red-transparent">
+            <p class="drac-text-red left drac-heading no-margin">{{info.description}}</p>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  {{/ifnoterror}}
+  {{#if info.error}}
+    <h2 class="drac-heading drac-heading-xl drac-text-red center">
+      Артикул не найден
+    </h2>
+  {{/if}}
 {{/if}}

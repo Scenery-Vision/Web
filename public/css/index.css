@@ -58,6 +58,11 @@
     margin: auto;
 }
 
+.description-card {
+    overflow: auto;
+    width: fit-content;
+}
+
 .card {
     padding: 20px 10px 20px 10px;
     margin: 0 20px 0 20px;
