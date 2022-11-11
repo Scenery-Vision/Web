@@ -27,7 +27,7 @@ router.get('/card/:code', async (req, res, _next) => {
         info: {
             name: "Кольцо из золота с бриллиантами",
             description: "Кольцо из золота с бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами",
-            img: "",
+            img: "https://pmdn.sokolov.io/pics/69/91/EDBE3FE2C335BDE1FA815D0A6CB0.jpg",
             chars: [{
                     key: "Бренд",
                     val: "Sokolov"
