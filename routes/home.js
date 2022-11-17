@@ -15,8 +15,17 @@ router.get('', async (_req, res, _next) => {
 router.get('/card/:code', async (req, res, _next) => {
     res.status(200)
 
-    if (req.session.response) {
-        // TODO
+    console.log(req.session.response)
+
+    if ((req.session.response) && (!req.session.response.error)) {
+        req.session.response.chars.foreach(element => {
+            return {
+                key: element.key,
+                val: element.val
+            }
+        })
+    } else {
+        req.session.response = {error: "Not found"}
     }
 
     res.render('index', {
@@ -24,32 +33,22 @@ router.get('/card/:code', async (req, res, _next) => {
         isMain: true,
         has_code: true,
         code: req.params.code,
-        info: {
-            name: "Кольцо из золота с бриллиантами",
-            description: "Кольцо из золота с бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами бриллиантами",
-            img: "https://pmdn.sokolov.io/pics/69/91/EDBE3FE2C335BDE1FA815D0A6CB0.jpg",
-            chars: [{
-                    key: "Бренд",
-                    val: "Sokolov"
-                },
-                {
-                    key: "Металл",
-                    val: "Крассное золото"
-                }
-            ]
-        }
+        info: req.session.response
     })
 })
 
-router.post("/handle", async (req, res, _next) => {
+router.post("/", async (req, res, _next) => {
     /*
-    TODO: content -> model -> uid (or use code here) -> DB (local) -> load -> card (+ thumbnail if doesn't exist)
     TODO: check if exists, if doesnt -> generate -> redir, else -> redir
     */
 
     const code = req.body.code
     handler = new CodeHandler(code)
-    server_response = await handler.send_code()
+    try {
+        server_response = await handler.send_code()
+    } catch {
+        server_response = {error: "Сервер не найден"}
+    }
 
     req.session.response = server_response;
     res.status(200);

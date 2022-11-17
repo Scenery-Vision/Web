@@ -4,7 +4,7 @@
   </h2>
 </div>
 <div class="divider"></div>
-<form id="adder" action="/handle" method="post">
+<form id="adder" action="/" method="post">
   <div class="section">
     <div class="row">
       <div class="input-field col s6 push-s3">
@@ -46,7 +46,7 @@
             </p>
           </div>
           <div class="card card-for-img no-padding">
-            <img class="card-img" src="{{info.img}}">
+            <img class="card-img" src="{{info.img}}" />
           </div>
         </div>
         <div class="col s6">
@@ -81,7 +81,9 @@
             </div>
           </div>
           <div class="card description-card">
-            <p class="drac-text-red left drac-heading no-margin">{{info.description}}</p>
+            <p class="drac-text-red left drac-heading no-margin">
+              {{info.description}}
+            </p>
           </div>
         </div>
       </div>
@@ -93,3 +95,10 @@
     </h2>
   {{/if}}
 {{/if}}
+<script>
+  $(document).ready(function(){
+  $("#adder").on("submit", function(){
+    $("#preloader").fadeIn();
+  });
+});
+</script>
