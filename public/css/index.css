@@ -94,7 +94,7 @@
     margin-bottom: 5px;
 }
 
-#preloader
+#pageloader
 {
   background: rgba( 255, 255, 255, 0.8 );
   display: none;
@@ -104,7 +104,7 @@
   z-index: 9999;
 }
 
-#preloader img
+#pageloader img
 {
   left: 50%;
   margin-left: -32px;
