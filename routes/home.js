@@ -19,6 +19,7 @@ router.get('/card/:code', async (req, res, _next) => {
     let descriptions = []
     let web_name = ""
     let img_path = ""
+    let seo_description = ""
 
     try {
         let response = JSON.parse(req.session.response)
@@ -26,11 +27,13 @@ router.get('/card/:code', async (req, res, _next) => {
         web_name = response["Название"]
         img_path = response["Путь к фото"]
         descriptions = response["Описания"]
+        seo_description = response["SEO"]
         chars = JSON.parse(JSON.stringify(response))
 
         delete chars["Название"]
         delete chars["Путь к фото"]
         delete chars["Описания"]
+        delete chars["SEO"]
     } catch (e) {
         chars = {
             error: "Not found"
@@ -47,7 +50,8 @@ router.get('/card/:code', async (req, res, _next) => {
         info: chars,
         web_name: web_name,
         img_path: img_path,
-        descriptions: descriptions
+        descriptions: descriptions,
+        seo_description: seo_description
     })
 })
 
