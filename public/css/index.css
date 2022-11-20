@@ -95,7 +95,7 @@
 }
 
 #pageloader {
-    background: rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.5);
     display: none;
     height: 100%;
     position: fixed;
@@ -104,9 +104,9 @@
 }
 
 #pageloader img {
-    left: 50%;
     margin-left: -32px;
     margin-top: -32px;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 180px);
+    left: calc(50% - 105px);;
 }

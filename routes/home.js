@@ -15,17 +15,28 @@ router.get('', async (_req, res, _next) => {
 router.get('/card/:code', async (req, res, _next) => {
     res.status(200)
 
-    console.log(req.session.response)
+    let chars = []
+    let descriptions = []
+    let web_name = ""
+    let img_path = ""
 
-    if ((req.session.response) && (!req.session.response.error)) {
-        req.session.response.chars.foreach(element => {
-            return {
-                key: element.key,
-                val: element.val
-            }
-        })
-    } else {
-        req.session.response = {error: "Not found"}
+    try {
+        let response = JSON.parse(req.session.response)
+
+        web_name = response["Название"]
+        img_path = response["Путь к фото"]
+        descriptions = response["Описания"]
+        chars = JSON.parse(JSON.stringify(response))
+
+        delete chars["Название"]
+        delete chars["Путь к фото"]
+        delete chars["Описания"]
+    } catch (e) {
+        chars = {
+            error: "Not found"
+        }
+
+        console.error(e, e.stack);
     }
 
     res.render('index', {
@@ -33,7 +44,10 @@ router.get('/card/:code', async (req, res, _next) => {
         isMain: true,
         has_code: true,
         code: req.params.code,
-        info: req.session.response
+        info: chars,
+        web_name: web_name,
+        img_path: img_path,
+        descriptions: descriptions
     })
 })
 
@@ -47,7 +61,9 @@ router.post("/", async (req, res, _next) => {
     try {
         server_response = await handler.send_code()
     } catch {
-        server_response = {error: "Сервер не найден"}
+        server_response = {
+            error: "Сервер не найден"
+        }
     }
 
     req.session.response = server_response;

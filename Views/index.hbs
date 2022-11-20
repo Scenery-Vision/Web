@@ -42,11 +42,11 @@
         <div class="col s6">
           <div class="card">
             <p class="drac-text-red center drac-heading-xl no-margin">
-              {{info.name}}
+              {{web_name}}
             </p>
           </div>
           <div class="card card-for-img no-padding">
-            <img class="card-img" src="{{info.img}}" />
+            <img class="card-img" src="{{img_path}}"/>
           </div>
         </div>
         <div class="col s6">
@@ -57,33 +57,33 @@
                   Характеристики:
                 </p>
               </div>
-              {{#each info.chars}}
+              {{#each info}}
                 <div class="char row">
                   <p class="drac-text-red left drac-heading no-margin">
-                    {{this.key}}
-                    :
+                    {{@key}}:
                   </p>
                   <p class="drac-text-red right drac-heading no-margin">
-                    {{this.val}}
+                    {{this}}
                   </p>
                 </div>
               {{/each}}
             </div>
-            <div class="section">
-              <div class="row right card-buttons">
-                <button>
-                  <
-                </button>
-                <button>
-                  >
-                </button>
-              </div>
-            </div>
           </div>
           <div class="card description-card">
-            <p class="drac-text-red left drac-heading no-margin">
-              {{info.description}}
-            </p>
+            <div class="col s12">
+              <ul class="tabs">
+                <li class="tab col s3 disabled"><a href="#Desc-3">SEO</a></li>
+                <li class="tab col s3"><a href="#Desc-0">1</a></li>
+                <li class="tab col s3"><a class="active" href="#Desc-1">2</a></li>
+                <li class="tab col s3"><a href="#Desc-2">3</a></li>
+              </ul>
+            </div>
+
+            {{#each descriptions}}
+              <p id="Desc-{{@index}}" class="drac-text-red left drac-heading no-margin">
+                {{this}}
+              </p>
+            {{/each}}
           </div>
         </div>
       </div>
@@ -97,8 +97,10 @@
 {{/if}}
 <script>
   $(document).ready(function(){
-  $("#adder").on("submit", function(){
-    $("#preloader").fadeIn();
+    $('.tabs').tabs();
+
+    $("#adder").on("submit", function(){
+      $("#pageloader").fadeIn();
+    });
   });
-});
 </script>

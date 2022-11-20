@@ -17,7 +17,7 @@ class Handler {
                 const chunks = [];
                 res.on('data', data => chunks.push(data))
                 res.on('end', () => {
-                    let resBody = Buffer.concat(chunks);
+                    let resBody = Buffer.concat(chunks).toString("utf8");
                     switch (res.headers['content-type']) {
                         case 'application/json':
                             resBody = JSON.parse(resBody);
@@ -38,7 +38,7 @@ class Handler {
         let response = await this.httpPost({
             hostname: '127.0.0.1',
             port: '3350',
-            path: `/scenery-vision/api/v1.0/generation_of_code/?code=${this.code}`,
+            path: `/scenery-vision/api/v1.0/generate_for_code/${this.code}`,
         })
 
         return response
