@@ -123,3 +123,7 @@
     left: calc(50% - 105px);
     ;
 }
+
+.footer {
+    height: 80px;
+}
