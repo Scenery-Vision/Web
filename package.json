@@ -27,10 +27,10 @@
     "homepage": "https://github.com/tiffirg/Scenery-Vision#readme",
     "dependencies": {
         "connect": "^3.7.0",
+        "cookie-session": "^2.0.0",
         "dracula-ui": "^1.0.3",
         "express": "^4.18.2",
         "express-handlebars": "^6.0.6",
-        "express-session": "^1.17.3",
         "morgan": "^1.10.0"
     },
     "devDependencies": {

@@ -23,7 +23,7 @@ class Handler {
                             resBody = JSON.parse(resBody);
                             break;
                     }
-                    resolve(resBody)
+                    resolve(resBody);
                 })
             })
             req.on('error', reject);
