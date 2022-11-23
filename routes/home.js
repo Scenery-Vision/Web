@@ -15,8 +15,6 @@ router.get('', async (_req, res, _next) => {
 router.get('/card/:code', async (req, res, _next) => {
     res.status(200)
 
-    console.log(req.session.response)
-
     let chars = []
     let descriptions = []
     let web_name = ""
