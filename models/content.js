@@ -1,4 +1,5 @@
 const http = require('http');
+const ip = require("../models/ip-hidden")
 
 class Handler {
     constructor(code) {
@@ -36,7 +37,7 @@ class Handler {
 
     async send_code() {
         let response = await this.httpPost({
-            hostname: '51.250.51.36',
+            hostname: ip,
             port: '3350',
             path: `/scenery-vision/api/v1.0/generate_for_code/${this.code}`,
         })
