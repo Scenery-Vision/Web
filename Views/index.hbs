@@ -50,7 +50,7 @@
           </div>
         </div>
         <div class="col s12 xl6">
-          <div class="card">
+          <div class="card chars-card">
             <div class="section no-padding">
               <div class="char-heading row">
                 <p class="drac-text-black left drac-heading-xl no-margin">
@@ -72,7 +72,7 @@
         </div>
       </div>
       <div class="row">
-        <div class="col 12">
+        <div class="col 12 description-card-wrapper">
           <div class="card description-card">
             <div class="col s12">
               <ul class="tabs">
@@ -84,11 +84,11 @@
             </div>
 
             {{#each descriptions}}
-              <p id="Desc-{{@index}}" class="drac-text-black left drac-heading no-margin">
+              <p id="Desc-{{@index}}" class="desc drac-text-black left drac-heading no-margin">
                 {{this}}
               </p>
             {{/each}}
-            <p id="Desc-SEO" class="drac-text-black left drac-heading no-margin">
+            <p id="Desc-SEO" class="desc drac-text-black left drac-heading no-margin">
                 {{seo_description}}
               </p>
           </div>

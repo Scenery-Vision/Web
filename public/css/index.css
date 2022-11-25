@@ -71,7 +71,7 @@
 
 .description-card {
     overflow: auto;
-    width: fit-content;
+    width: auto;
     padding-top: 10px !important;
 }
 
@@ -91,6 +91,19 @@
     border-radius: 10px
 }
 
+.chars-card {
+    padding: 20px 10px 20px 10px;
+}
+
+.description-card-wrapper {
+    width: 100%;
+}
+
+.desc {
+    padding: 0 15px 0 15px;
+    text-align: justify;
+}
+
 .char,
 .char-heading,
 .card-buttons {
@@ -103,7 +116,7 @@
 }
 
 .char {
-    margin-bottom: 5px;
+    margin-bottom: 5.75px;
 }
 
 #pageloader {
