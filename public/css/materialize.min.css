@@ -84,11 +84,11 @@
 }
 
 .red {
-    background-color: #ff5e5e !important
+    background-color: #4A156B !important
 }
 
 .red-text {
-    color: #ff5e5e !important
+    color: #4A156B !important
 }
 
 .red.lighten-5 {
@@ -1092,11 +1092,11 @@
 }
 
 .green {
-    background-color: #ff5e5e !important
+    background-color: #4A156B !important
 }
 
 .green-text {
-    color: #ff5e5e !important
+    color: #4A156B !important
 }
 
 .green.lighten-5 {
@@ -5134,8 +5134,9 @@ small {
 .tabs .tab a:hover,
 .tabs .tab a.active {
     background-color: transparent;
-    /* color: #ee6e73 */
-    color: #8a3639;
+    color: #6B1E9A;
+    /* color: #ee6e73; */
+    /* color: #8a3639; */
     /* color: black; */
 }
 
@@ -5149,7 +5150,7 @@ small {
     position: absolute;
     bottom: 0;
     height: 2px;
-    background-color: #f6b2b5;
+    background-color: #6B1E9A;
     will-change: left, right
 }
 
@@ -5302,7 +5303,7 @@ small {
 .btn-large:focus,
 .btn-small:focus,
 .btn-floating:focus {
-    background-color: #ff5e5e;
+    background-color: #4A156B;
 }
 
 .btn,
@@ -5310,7 +5311,7 @@ small {
 .btn-small {
     text-decoration: none;
     color: #fff;
-    background-color: #ff5e5e;
+    background-color: #4A156B;
     text-align: center;
     letter-spacing: .5px;
     -webkit-transition: background-color .2s ease-out;
@@ -5737,7 +5738,7 @@ body.keyboard-focused .dropdown-content li:focus {
 }
 
 .waves-effect.waves-red .waves-ripple {
-    background-color: #ff5e5e
+    background-color: #4A156B
 }
 
 .waves-effect.waves-yellow .waves-ripple {
@@ -6166,7 +6167,7 @@ select:focus {
 
 button:focus {
     outline: none;
-    background-color: #ff5e5e;
+    background-color: #4A156B;
 }
 
 label {
@@ -6317,7 +6318,7 @@ input[type=tel]:not(.browser-default):focus:not([readonly])+label,
 input[type=number]:not(.browser-default):focus:not([readonly])+label,
 input[type=search]:not(.browser-default):focus:not([readonly])+label,
 textarea.materialize-textarea:focus:not([readonly])+label {
-    color: #ff5e5e;
+    color: #4A156B;
 }
 
 input:not([type]):focus.valid~label,
@@ -6333,7 +6334,7 @@ input[type=tel]:not(.browser-default):focus.valid~label,
 input[type=number]:not(.browser-default):focus.valid~label,
 input[type=search]:not(.browser-default):focus.valid~label,
 textarea.materialize-textarea:focus.valid~label {
-    color: #ff5e5e
+    color: #4A156B
 }
 
 input:not([type]):focus.invalid~label,
@@ -6349,7 +6350,7 @@ input[type=tel]:not(.browser-default):focus.invalid~label,
 input[type=number]:not(.browser-default):focus.invalid~label,
 input[type=search]:not(.browser-default):focus.invalid~label,
 textarea.materialize-textarea:focus.invalid~label {
-    color: #ff5e5e
+    color: #4A156B
 }
 
 input:not([type]).validate+label,
@@ -6395,9 +6396,9 @@ input.valid[type=search]:not(.browser-default):focus,
 textarea.materialize-textarea.valid,
 textarea.materialize-textarea.valid:focus,
 .select-wrapper.valid>input.select-dropdown {
-    border-bottom: 1px solid #ff5e5e;
-    -webkit-box-shadow: 0 1px 0 0 #ff5e5e;
-    box-shadow: 0 1px 0 0 #ff5e5e
+    border-bottom: 1px solid #4A156B;
+    -webkit-box-shadow: 0 1px 0 0 #4A156B;
+    box-shadow: 0 1px 0 0 #4A156B
 }
 
 input.invalid:not([type]),
@@ -6428,9 +6429,9 @@ textarea.materialize-textarea.invalid,
 textarea.materialize-textarea.invalid:focus,
 .select-wrapper.invalid>input.select-dropdown,
 .select-wrapper.invalid>input.select-dropdown:focus {
-    border-bottom: 1px solid #ff5e5e;
-    -webkit-box-shadow: 0 1px 0 0 #ff5e5e;
-    box-shadow: 0 1px 0 0 #ff5e5e
+    border-bottom: 1px solid #4A156B;
+    -webkit-box-shadow: 0 1px 0 0 #4A156B;
+    box-shadow: 0 1px 0 0 #4A156B
 }
 
 input:not([type]).valid~.helper-text[data-success],
@@ -6523,7 +6524,7 @@ textarea.materialize-textarea.valid~.helper-text:after,
 textarea.materialize-textarea:focus.valid~.helper-text:after,
 .select-wrapper.valid~.helper-text:after {
     content: attr(data-success);
-    color: #ff5e5e
+    color: #4A156B
 }
 
 input:not([type]).invalid~.helper-text:after,
@@ -6554,7 +6555,7 @@ textarea.materialize-textarea.invalid~.helper-text:after,
 textarea.materialize-textarea:focus.invalid~.helper-text:after,
 .select-wrapper.invalid~.helper-text:after {
     content: attr(data-error);
-    color: #ff5e5e
+    color: #4A156B
 }
 
 input:not([type])+label:after,
@@ -7658,11 +7659,11 @@ input[type=range]::-ms-thumb {
 .sidenav li>a.btn-large:hover,
 .sidenav li>a.btn-small:hover,
 .sidenav li>a.btn-large:hover {
-    background-color: #2bbbad
+    background-color: #4A156B
 }
 
 .sidenav li>a.btn-floating:hover {
-    background-color: #D85151
+    background-color: #4A156B
 }
 
 .sidenav li>a>i,
@@ -7866,7 +7867,7 @@ input[type=range]::-ms-thumb {
 
 .spinner-red,
 .spinner-red-only {
-    border-color: #ff5e5e
+    border-color: #4A156B
 }
 
 .spinner-yellow,
@@ -8409,7 +8410,7 @@ input[type=range]::-ms-thumb {
 }
 
 .slider .indicators .indicator-item.active {
-    background-color: #ff5e5e
+    background-color: #4A156B
 }
 
 .carousel {
@@ -8893,7 +8894,7 @@ input[type=range]::-ms-thumb {
 }
 
 .datepicker-clear {
-    color: #ff5e5e
+    color: #4A156B
 }
 
 @media only screen and (min-width: 601px) {
@@ -9107,7 +9108,7 @@ input[type=range]::-ms-thumb {
 }
 
 .timepicker-clear {
-    color: #ff5e5e
+    color: #4A156B
 }
 
 .timepicker-close {
