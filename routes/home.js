@@ -15,6 +15,16 @@ router.get('', async (_req, res, _next) => {
 router.get('/card/:code', async (req, res, _next) => {
     res.status(200)
 
+    res.render('index', {
+        title: "Scenery Vision",
+        isMain: true,
+        has_code: false,
+    })
+})
+
+router.get('/card/:code', async (req, res, _next) => {
+    res.status(200)
+
     let chars = []
     let descriptions = []
     let web_name = ""
