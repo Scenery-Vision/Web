@@ -10,6 +10,10 @@
     padding: 0;
 }
 
+.input-row {
+    margin-bottom: 5px;
+}
+
 .submit-button {
     display: block;
     height: 100%;
