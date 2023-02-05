@@ -3,12 +3,14 @@ const {
 } = require('express')
 const CodeHandler = require('../models/content');
 const router = Router()
+const examples = ["018883", "94022616", "94-130-00718-1", "1021565", "51-250-01034-1", "1021794", "0200115", "1012544", "94040177", "3030184"]
 
 router.get('', async (_req, res, _next) => {
     res.status(200)
     res.render('index', {
         title: "Scenery Vision",
-        isMain: true
+        isMain: true,
+        examples: examples,
     })
 })
 
@@ -19,6 +21,7 @@ router.get('/card/', async (req, res, _next) => {
         title: "Scenery Vision",
         isMain: true,
         has_code: false,
+        examples: examples,
     })
 })
 
@@ -61,7 +64,8 @@ router.get('/card/:code', async (req, res, _next) => {
         web_name: web_name,
         img_path: img_path,
         descriptions: descriptions,
-        seo_description: seo_description
+        seo_description: seo_description,
+        examples: examples,
     })
 })
 

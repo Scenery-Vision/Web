@@ -14,7 +14,7 @@
             class="code-input valign-wrapper"
             name="code"
             value="{{code}}"
-            placeholder="Введите артикул"
+            placeholder="Введите или выберите артикул"
           />
           <button class="submit-button">
             <svg
@@ -29,6 +29,17 @@
               ></path>
             </svg>
           </button>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="slider col s12 m6 push-m3">
+        <div class="slide-track examples" style="max-width: calc({{examples.length}} * 150px);">
+          {{#each examples}}
+            <div id="{{this}}" class="example-code drac-bg-purple-secondary center {{#if @last}}no-margin{{/if}}">
+              {{this}}
+            </div>
+          {{/each}}
         </div>
       </div>
     </div>
@@ -106,8 +117,48 @@
   $(document).ready(function(){
     $('.tabs').tabs();
 
-    $("#adder").on("submit", function(){
+    $("#adder").on("submit", () => {
       $("#pageloader").fadeIn();
     });
+
+    $(".example-code").click((event) => {
+      code = event.target.id;
+      
+    })
   });
 </script>
+
+<style>
+  @-webkit-keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-150px * {{examples.length}} / 2));
+      transform: translateX(calc(-150px * {{examples.length}} / 2));
+    }
+  }
+  @keyframes scroll {
+    0% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+    }
+    100% {
+      -webkit-transform: translateX(calc(-150px * {{examples.length}} / 2));
+      transform: translateX(calc(-150px * {{examples.length}} / 2));
+    }
+  }
+
+  .slider .slide-track {
+      -webkit-animation: scroll 30s linear infinite;
+      animation: scroll 30s linear infinite;
+      display: flex;
+      width: calc(150px * {{examples.length}});
+  }
+
+  .slider .slide {
+      height: 100px;
+      width: 150px;
+  }
+</style>

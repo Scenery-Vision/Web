@@ -48,6 +48,26 @@
     box-shadow: none !important;
 }
 
+.examples {
+    display: flex;
+    flex-direction: row;
+    max-width: 7034;
+}
+
+.example-code {
+    margin-right: 5px;
+    padding: 5px 0 5px 0;
+    border-radius: 15px;
+    cursor: pointer;
+    width: 150px;
+}
+
+.slider {
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
 .submit-button {
     background: #601B8A;
     width: 55px;
