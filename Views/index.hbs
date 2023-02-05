@@ -13,6 +13,7 @@
             type="text"
             class="code-input valign-wrapper"
             name="code"
+            id="code"
             value="{{code}}"
             placeholder="Введите или выберите артикул"
           />
@@ -123,7 +124,11 @@
 
     $(".example-code").click((event) => {
       code = event.target.id;
-      
+      input_form = $("#code")[0];
+      submit_form = $("#adder")
+
+      input_form.value = code;
+      submit_form.submit();
     })
   });
 </script>
